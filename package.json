@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "better-sqlite3": "^8.3.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
@@ -55,9 +56,9 @@
     "morgan": "^1.10.0",
     "nanoid": "3.3.4",
     "objection": "^3.0.1",
-    "pg": "^8.10.0",
     "pipeawait": "^1.0.0",
     "winston": "^3.8.2",
     "zod": "^3.21.4"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }

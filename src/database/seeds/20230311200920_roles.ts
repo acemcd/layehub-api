@@ -3,6 +3,7 @@ const table = 'roles';
 
 export async function seed(knex: Knex): Promise<void> {
   await knex(table).del();
+
   return knex(table).insert([
     {
       id: '1',

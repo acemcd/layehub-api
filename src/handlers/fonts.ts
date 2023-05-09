@@ -31,9 +31,14 @@ class FontsHandler {
   }
 
   public async list(request: Request, response: Response) {
-    const input = LIST_FONTS_REQUEST.parse(request.query);
-    const fonts = await this.fontsService.findMany({ userId: 'EDITOR' });
-    response.json({ fonts });
+    try {
+      const input = LIST_FONTS_REQUEST.parse(request.query);
+      const fonts = await this.fontsService.findMany({ userId: 'EDITOR' });
+      response.json({ fonts });
+    } catch (error: any) {
+      console.log(error);
+      response.status(500).send({ error: error.message });
+    }
   }
 }
 

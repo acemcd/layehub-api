@@ -11,7 +11,7 @@ export function loadConfig(): AppConfig {
     AWS_EMAIL_SENDER: str(),
     AWS_REGION: str(),
     AWS_BUCKET: str(),
-    DB_CONNECTION: url(),
+    DB_CONNECTION: str(),
     NODE_ENV: str<ENVIRONMENT>({
       default: 'development'
     }),

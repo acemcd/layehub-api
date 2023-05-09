@@ -4,8 +4,10 @@ dotenv.config();
 
 export default {
   development: {
-    client: 'pg',
-    connection: process.env.DB_CONNECTION || '',
+    client: 'better-sqlite3',
+    connection: {
+      filename: process.env.DB_CONNECTION || ''
+    },
     pool: {
       min: 2,
       max: 10
@@ -21,7 +23,7 @@ export default {
     }
   },
   production: {
-    client: 'pg',
+    client: 'better-sqlite3',
     connection: process.env.DB_CONNECTION || '',
     pool: {
       min: 2,
@@ -38,7 +40,7 @@ export default {
     }
   },
   test: {
-    client: 'pg',
+    client: 'better-sqlite3',
     connection: process.env.DB_CONNECTION || '',
     migrations: {
       directory: 'src/database/migrations',

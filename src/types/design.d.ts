@@ -10,6 +10,7 @@ interface IDesign {
 interface CreateDesignDto {
   name: string;
   description: string;
+  content: string;
 }
 
 // interface FindDesign

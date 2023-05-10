@@ -7,6 +7,7 @@ import Handlers from './handlers/handlers';
 import Services from './services/services';
 import setupRoutes from './routes';
 import { loadConfig } from './config/config';
+import localCDN from './common/middleware/cdn';
 
 async function bootstrap() {
   const config = loadConfig();
@@ -24,6 +25,7 @@ async function bootstrap() {
   app.use(morgan);
 
   app.use('/api', routes);
+  app.use('/public', localCDN());
 
   app.use(errorMiddleware);
 

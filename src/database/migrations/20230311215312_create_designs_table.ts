@@ -5,6 +5,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('id').primary();
     table.string('name').notNullable();
     table.string('description');
+    table.string('content');
     table.boolean('published').defaultTo(false);
     table.string('userId').notNullable();
     table

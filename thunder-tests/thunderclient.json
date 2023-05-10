@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "89b07516-3be8-40a5-9708-e6222b67c7a3",
+    "colId": "0622a266-695a-4916-a330-fdbecefe77d2",
+    "containerId": "",
+    "name": "GET Designs",
+    "url": "http://localhost:8080/api/designs",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-05-10T09:29:08.203Z",
+    "modified": "2023-05-10T09:29:08.203Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "ed18e700-1b11-4750-a22e-b52064b3436c",
+    "colId": "0622a266-695a-4916-a330-fdbecefe77d2",
+    "containerId": "",
+    "name": "Designs",
+    "url": "http://localhost:8080/api/designs",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-05-10T09:29:15.945Z",
+    "modified": "2023-05-10T09:37:01.283Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": \"XaCILMhgMT3IM7Kyq0YtU\",\n  \"type\": \"GRAPHIC\",\n  \"name\": \"Untitled Design\",\n  \"description\": \"Test\",\n  \"frame\": {\n    \"width\": 1200,\n    \"height\": 1200\n  },\n  \"scenes\": [\n    {\n      \"id\": \"4hlBURw_O1-HAFHS6RF8J\",\n      \"layers\": [\n        {\n          \"id\": \"background\",\n          \"name\": \"Initial Frame (1)\",\n          \"angle\": 0,\n          \"stroke\": null,\n          \"strokeWidth\": 0,\n          \"left\": 0,\n          \"top\": 0,\n          \"width\": 1200,\n          \"height\": 1200,\n          \"opacity\": 1,\n          \"originX\": \"left\",\n          \"originY\": \"top\",\n          \"scaleX\": 1,\n          \"scaleY\": 1,\n          \"type\": \"Background\",\n          \"flipX\": false,\n          \"flipY\": false,\n          \"skewX\": 0,\n          \"skewY\": 0,\n          \"visible\": true,\n          \"shadow\": {\n            \"color\": \"#fcfcfc\",\n            \"blur\": 4,\n            \"offsetX\": 0,\n            \"offsetY\": 0,\n            \"affectStroke\": false,\n            \"nonScaling\": false\n          },\n          \"fill\": \"#ffffff\",\n          \"metadata\": {}\n        },\n        {\n          \"id\": \"LOrKiw_OzwZNkaFRCBtzu\",\n          \"name\": \"slut-text\",\n          \"angle\": 0,\n          \"stroke\": null,\n          \"strokeWidth\": 0,\n          \"left\": 390,\n          \"top\": 32.66,\n          \"width\": 420,\n          \"height\": 103.96,\n          \"opacity\": 1,\n          \"originX\": \"left\",\n          \"originY\": \"top\",\n          \"scaleX\": 1,\n          \"scaleY\": 1,\n          \"type\": \"StaticText\",\n          \"flipX\": false,\n          \"flipY\": false,\n          \"skewX\": 0,\n          \"skewY\": 0,\n          \"visible\": true,\n          \"shadow\": null,\n          \"charSpacing\": 0,\n          \"fill\": \"#ec407a\",\n          \"fontFamily\": \"OpenSans-Regular\",\n          \"fontSize\": 92,\n          \"lineHeight\": 1.16,\n          \"text\": \"Slut\",\n          \"textAlign\": \"center\",\n          \"fontURL\": \"https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.ttf\",\n          \"metadata\": {}\n        },\n        {\n          \"id\": \"3w9KPQbyeUe3kgtwpMZx4\",\n          \"name\": \"heart\",\n          \"angle\": 0,\n          \"stroke\": null,\n          \"strokeWidth\": 0,\n          \"left\": 479.67999999999995,\n          \"top\": 225.35999999999999,\n          \"width\": 512,\n          \"height\": 455.52,\n          \"opacity\": 1,\n          \"originX\": \"left\",\n          \"originY\": \"top\",\n          \"scaleX\": 0.47,\n          \"scaleY\": 0.47,\n          \"type\": \"StaticPath\",\n          \"flipX\": false,\n          \"flipY\": false,\n          \"skewX\": 0,\n          \"skewY\": 0,\n          \"visible\": true,\n          \"shadow\": null,\n          \"preview\": \"http://localhost:8080/public/elements/heart.png\",\n          \"path\": [\n            [\n              \"M\",\n              471.382812,\n              44.578125\n            ],\n            [\n              \"C\",\n              444.87890600000003,\n              15.832031,\n              408.51171899999997,\n              0,\n              368.97265600000003,\n              0\n            ],\n            [\n              \"C\",\n              339.417969,\n              0,\n              312.35156200000006,\n              9.34375,\n              288.52343800000006,\n              27.769531\n            ],\n            [\n              \"C\",\n              276.50000000000006,\n              37.070312,\n              265.6054690000001,\n              48.449219,\n              256.00000000000006,\n              61.730469\n            ],\n            [\n              \"C\",\n              246.39843800000006,\n              48.453125,\n              235.50000000000006,\n              37.070312,\n              223.47265600000006,\n              27.769531\n            ],\n            [\n              \"C\",\n              199.64843800000006,\n              9.34375,\n              172.58203100000006,\n              0,\n              143.02734400000006,\n              0\n            ],\n            [\n              \"C\",\n              103.48828100000006,\n              0,\n              67.11718800000006,\n              15.832031,\n              40.61328100000006,\n              44.578125\n            ],\n            [\n              \"C\",\n              14.425781000000057,\n              72.988281,\n              5.684341886080802e-14,\n              111.800781,\n              5.684341886080802e-14,\n              153.871094\n            ],\n            [\n              \"C\",\n              5.684341886080802e-14,\n              197.171875,\n              16.136719000000056,\n              236.808594,\n              50.78125000000006,\n              278.61328100000003\n            ],\n            [\n              \"C\",\n              81.77343800000006,\n              316.00781200000006,\n              126.31640600000006,\n              353.96875,\n              177.89843800000006,\n              397.92578100000003\n            ],\n            [\n              \"C\",\n              195.51171900000006,\n              412.9375,\n              215.47656200000006,\n              429.953125,\n              236.20703100000006,\n              448.078125\n            ],\n            [\n              \"C\",\n              241.68359400000006,\n              452.875,\n              248.71093800000006,\n              455.515625,\n              256.00000000000006,\n              455.515625\n            ],\n            [\n              \"C\",\n              263.28515600000003,\n              455.515625,\n              270.31640600000003,\n              452.875,\n              275.78515600000003,\n              448.085938\n            ],\n            [\n              \"C\",\n              296.515625,\n              429.957031,\n              316.49218800000006,\n              412.93359399999997,\n              334.11328100000003,\n              397.914062\n            ],\n            [\n              \"C\",\n              385.6875,\n              353.96484399999997,\n              430.230469,\n              316.007812,\n              461.22265600000003,\n              278.609375\n            ],\n            [\n              \"C\",\n              495.86718800000006,\n              236.808594,\n              512,\n              197.171875,\n              512,\n              153.867188\n            ],\n            [\n              \"C\",\n              512,\n              111.800781,\n              497.57421899999997,\n              72.988281,\n              471.382812,\n              44.578125\n            ],\n            [\n              \"z\"\n            ],\n            [\n              \"M\",\n              471.382812,\n              44.578125\n            ]\n          ],\n          \"fill\": \"#ff0000\",\n          \"metadata\": {}\n        }\n      ],\n      \"name\": \"Untitled design\"\n    }\n  ],\n  \"metadata\": {},\n  \"preview\": \"\"\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "foo",
+        "password": "var"
+      }
+    },
+    "tests": []
+  }
+]

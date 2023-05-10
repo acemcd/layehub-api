@@ -10,8 +10,13 @@ class DesignsHandler {
 
   public async create(request: Request, response: Response) {
     const user = request.user;
+    const userId = 'EDITOR'; //: user?.id
     const input = CREATE_DESIGN_REQUEST.parse(request.body);
-    const payload = Object.assign({}, input, { userId: user?.id });
+
+    const payload = Object.assign({}, input, {
+      userId,
+      content: JSON.stringify(input)
+    });
     const design = await this.designsService.create(payload);
     response.json(design);
   }

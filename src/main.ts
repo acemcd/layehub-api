@@ -14,7 +14,7 @@ async function bootstrap() {
   const app = express();
   const services = new Services(config);
   const handlers = new Handlers(services);
-
+  const cdnPath = localCDN();
   const routes = setupRoutes({
     handlers,
     services
@@ -25,7 +25,7 @@ async function bootstrap() {
   app.use(morgan);
 
   app.use('/api', routes);
-  app.use('/public', localCDN());
+  app.use('/public', cdnPath);
 
   app.use(errorMiddleware);
 

@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../react-design-editor"
+    },
+    {
+      "path": "../layerhub-io"
+    }
+  ],
+  "settings": {}
+}

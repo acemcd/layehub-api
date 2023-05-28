@@ -1,5 +1,6 @@
 import { config as loadDotenv } from 'dotenv';
 import { cleanEnv, port, str, url } from 'envalid';
+import { getCdnPath } from '../common/middleware/cdn';
 
 export function loadConfig(): AppConfig {
   loadDotenv();
@@ -28,7 +29,7 @@ export function loadConfig(): AppConfig {
       bucket: env.AWS_BUCKET,
       region: env.AWS_REGION
     },
-    appCdnBase: env.APP_CDN_BASE,
+    appCdnBase: getCdnPath() + '/uploads',
     environment: env.NODE_ENV
   };
   return config;

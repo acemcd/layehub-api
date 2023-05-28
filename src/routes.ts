@@ -34,9 +34,15 @@ const setupRoutes = ({
   router.get('/components', (req, res) => {
     res.send({ components: [] });
   });
-  router.get('/uploads', (req, res) => {
-    res.send({ uploads: [] });
-  });
+  router.get('/uploads', handlers.uploads.list.bind(handlers.uploads));
+  router.get(
+    '/uploads/previews/create',
+    handlers.uploads.createPreviews.bind(handlers.uploads)
+  );
+
+  // router.get('/uploads', (req, res) => {
+  //   res.send({ uploads: [] });
+  // });
 
   return router;
 };

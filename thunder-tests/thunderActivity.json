@@ -4,11 +4,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/api/designs",
-    "url": "http://localhost:8080/api/designs",
+    "url": "http://localhost:8080/api/uploads/previews/create",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-05-10T09:28:36.739Z",
-    "modified": "2023-05-10T09:28:36.739Z",
+    "modified": "2023-05-27T22:16:57.463Z",
     "headers": [],
     "params": [],
     "tests": []

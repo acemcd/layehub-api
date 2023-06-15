@@ -1,3 +1,4 @@
+import { string } from 'joi';
 import { z } from 'zod';
 
 function toNumber(val: string | undefined | null, ctx: z.RefinementCtx) {
@@ -82,4 +83,19 @@ export const SIGNIN_REQUEST = z.object({
       invalid_type_error: 'Password must be a string'
     })
     .min(8, 'Password too short')
+});
+
+export const CREATE_UPLOAD_REQUEST = z.object({
+  filename: z.string({
+    required_error: 'Filename is required',
+    invalid_type_error: 'Filename must be a string'
+  }),
+  thumbnailSrc: z.string({
+    required_error: 'ThumbPath is required',
+    invalid_type_error: 'ThumbPath must be a string'
+  }),
+  src: z.string({
+    required_error: 'src is required',
+    invalid_type_error: 'src must be a string'
+  })
 });

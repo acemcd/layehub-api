@@ -1,15 +1,39 @@
 import path from 'path';
 import fs from 'fs';
 import imageThumbnail from 'image-thumbnail';
+import Upload from '../database/models/upload';
 
+const rootPath = '/home/dev/dev/layehub-api';
 class UploadService {
   appCdnBase: string;
   appCdnThumbnailBase: string;
   constructor(config: AppConfig) {
     this.appCdnBase = config.appCdnBase;
-    this.appCdnThumbnailBase = this.appCdnBase + '/preview';
+    this.appCdnThumbnailBase = this.appCdnBase + '/thumbs';
   }
 
+  public create = async (params: CreateUploadDto) => {
+    const payload = {
+      ...params
+    };
+    const upload = await Upload.query().insert(payload).returning('*');
+    return upload;
+  };
+
+  public async findMany(params: FindUploadParams) {
+    const query = Upload.query();
+    if (params.type) {
+      query.where('type', params.type);
+    }
+
+    const uploads = await query;
+    return { uploads };
+  }
+
+  public async fetchAll() {
+    const uploads = await Upload.query();
+    return uploads;
+  }
   public async getAllFiles() {
     console.log({ appCdnBase: this.appCdnBase });
     const result = fs.readdirSync(this.appCdnBase, { withFileTypes: true });
@@ -29,28 +53,35 @@ class UploadService {
     }
   }
 
-  private getThumbnailPath(filePath: string) {
-    const ext = path.extname(filePath);
-    const thumbnailPath = filePath.replace(ext, `.thumbnail${ext}`);
-    return thumbnailPath;
+  private getThumbnailPath(filename: string) {
+    return {
+      thumbPath: path.join(this.appCdnThumbnailBase, filename),
+      thumbnailSrc: path.join(
+        this.appCdnThumbnailBase.replace(rootPath, ''),
+        filename
+      )
+    };
   }
 
-  public async createThumbnail(path: string) {
-    const thumbnail = await this.createImageThumbnail(path);
+  public async createThumbnail(filePath: string, filename: string) {
+    const thumbnail = await this.createImageThumbnail(filePath);
     if (!thumbnail) {
       throw new Error('Thumbnail not created');
     }
-    const thumbnailPath = this.getThumbnailPath(path);
-    fs.writeFileSync(thumbnailPath, thumbnail);
-    return thumbnailPath;
+    const { thumbPath, thumbnailSrc } = this.getThumbnailPath(filename);
+
+    fs.writeFileSync(thumbPath, thumbnail);
+    const src = filePath.replace(rootPath, '');
+    return { src, thumbnailSrc };
   }
 
   public async createThumbnails(files: string[]) {
     const previews = [];
-    for (const file of files) {
-      const thumbnailPath = await this.createThumbnail(
-        path.join(this.appCdnBase, file)
-      );
+    for (const filename of files) {
+      const filePath = path.join(this.appCdnBase, filename);
+
+      const thumbnailPath = await this.createThumbnail(filePath, filename);
+
       console.log({ thumbnailPath });
       previews.push(thumbnailPath);
     }

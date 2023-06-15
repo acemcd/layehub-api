@@ -34,6 +34,11 @@ const setupRoutes = ({
   router.get('/components', (req, res) => {
     res.send({ components: [] });
   });
+  router.post(
+    '/uploads',
+    handlers.uploads.uploadHandler.bind(handlers.uploads),
+    handlers.uploads.create.bind(handlers.uploads)
+  );
   router.get('/uploads', handlers.uploads.list.bind(handlers.uploads));
   router.get(
     '/uploads/previews/create',
